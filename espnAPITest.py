@@ -1,4 +1,4 @@
-# This file finds all of the current rostered players in my fantasy league in writes them to the file 'rosteredPlayers.csv'
+# This file finds all of the current rostered players in my fantasy league in writes them to the file 'rosteredPlayers.csv9'
 
 from espn_api.basketball import League
 import csv
