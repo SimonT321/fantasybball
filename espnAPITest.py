@@ -11,13 +11,28 @@ counter = 0
 for team in league.teams:
     allTeams.append(team)
     for i in range(len(team.roster) - 1):
-        rosteredPlayers.append(team.roster[i].name)
+        rosteredPlayers.append(team.roster[i].name.split()[:2])
 
+rosteredPlayers = list(map(lambda x: ' '.join(x), rosteredPlayers))
 
 with open('rosteredPlayers.csv','w', newline='') as rosterFile:
     rosterWriter = csv.writer(rosterFile, quoting=csv.QUOTE_ALL)
     rosterWriter.writerow(rosteredPlayers)
 
-  
+freeAgents = []
+pObject = []
+pObject = league.free_agents(size=600)
+for o in pObject:
+    freeAgents.append(o.name)
 
+freeAgents = list(map(lambda x: ' '.join(x), freeAgents))
+
+with open('ESPNFreeAgents.csv','w', newline='') as freeAgentFile:
+    freeWriter = csv.writer(freeAgentFile, quoting=csv.QUOTE_ALL)
+    freeWriter.writerow(freeAgents)
+
+
+
+print(freeAgents[5].name)
+print(freeAgents[5].eligibleSlots)
     
