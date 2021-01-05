@@ -1,18 +1,13 @@
+import pandas as pd
 import csv
 
-with open('players.csv', newline='') as allPlayerFile:
-    reader = csv.reader(allPlayerFile)
-    allPlayers = list(reader)
+rosteredPlayersDF = pd.read_csv(r"rosteredPlayers.csv")
+allPlayersDF = pd.read_csv(r"players.csv")
 
-with open('rosteredPlayers.csv', newline='') as rosteredPlayerFile:
-    reader = csv.reader(rosteredPlayerFile)
-    rosteredPlayers = list(reader)
+freeAgents = []
+for player in allPlayersDF:
+    if player not in rosteredPlayersDF:
+        freeAgents.append(player)
 
-freeAgents = allPlayers
-for player in allPlayers:
-    if player in rosteredPlayers:
-        freeAgents.remove(player)
-
-with open('freeAgents.csv', 'w') as freeAgentFile:
-    wr = csv.writer(freeAgentFile, quoting=csv.QUOTE_ALL)
-    wr.writerow(freeAgents)
+freeAgentsDF = DataFrame(freeAgents)
+freeAgentsDF.to_csv(r'freeAgents.csv')

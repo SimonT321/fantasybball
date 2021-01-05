@@ -1,5 +1,6 @@
 import csv
 import glob
+import unidecode
 
 listPlayers = []
 
@@ -9,8 +10,10 @@ for f in files:
         next(boxScore)
         reader = csv.reader(boxScore, delimiter=',')
         for r in reader:
-            if(r[1] not in listPlayers):
-                listPlayers.append(r[1])
+            if(unidecode.unidecode(r[1]) not in listPlayers):
+                listPlayers.append(unidecode.unidecode(r[1]))
+
+
 
 with open('players.csv', 'w') as file:
     wr = csv.writer(file, quoting=csv.QUOTE_ALL)
