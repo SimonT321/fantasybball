@@ -16,7 +16,7 @@ with open("schedule.csv") as schedule:
         year = date[0]
         month = date[1]
         day = date[2]
-        if(int(day) > 2 and int(month) == 1):
+        if(int(day) > 4 and int(month) == 1):
             break
         print(date)
         client.player_box_scores(day=day, month=month, year=year, output_type=OutputType.CSV, output_file_path="./allBoxScores/{}_{}_{}_box_scores.csv".format(month, day, year))
