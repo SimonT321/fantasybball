@@ -3,7 +3,7 @@
 from espn_api.basketball import League
 import csv
 # Init
-league = League(league_id=26491754, year=2021, espn_s2='AECbvyw1Y02wEo0LlQcX5lgTJU%2FAlxocr%2FXy84GxtgdZEP7efKX%2FlxDWyYgILTlm03oCh215z%2B2shXCfJh3TBJh1Cm6UzegJE%2FyMrJpPToTYh8kyD%2BSMgJpdkthHI8qDO5LRI2wd1fB32TazHtfCx2Di4qwpLc3q2kIG5uhzXP4gXg6DduKzwDyYrFT3THeIHn3l9bHWSygdV9rAJ81P%2BCCu5Z7exkqRPXdhEk%2FhjV1k6pm3AROA0HipTrcMKJVcOvBbgR6ttE7St5U5bNkyBDdQ', swid='{A412EB56-A5A1-46C9-A811-9A0B750D4CA9}')
+league = League(league_id=26491754, year=2021, espn_s2='', swid='')
 
 allTeams = []
 rosteredPlayers = []
